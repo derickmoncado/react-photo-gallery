@@ -4,7 +4,12 @@ import './App.css';
 function App() {
 	return (
 		<div className="App">
-			my app
+			<p>my photo gallery app (WIP)</p>
+			<div className="data">
+				<ul>
+					<li>asdf</li>
+				</ul>
+			</div>
 		</div>
 	);
 }

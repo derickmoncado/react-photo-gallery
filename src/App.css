@@ -1,3 +1,7 @@
 .App {
 	text-align: center;
+	padding: 22px;
+	margin: 22px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
 }
