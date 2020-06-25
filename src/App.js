@@ -17,7 +17,7 @@ function App() {
 	return (
 		<div className="App">
 			<h1>Random Photo Gallery</h1>
-			<PhotoList allThePhotos={images} />
+			<PhotoList images={images} />
 		</div>
 	);
 }
