@@ -1,14 +1,10 @@
 import React from "react";
 
-function PhotoList() {
+function PhotoList({ images }) {
 
 	return (
 		<div className="photo-container">
-			<ul>
-				<li>asdf</li>
-				<li>asdfasdf</li>
-				<li>asdfasdf</li>
-			</ul>
+			
 		</div>
 	);
 }
