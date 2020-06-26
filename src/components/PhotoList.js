@@ -4,7 +4,6 @@ import Modal from 'react-bootstrap/Modal';
 
 function PhotoList({ images }) {
 	const [show, setShow] = useState(false);
-
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
@@ -13,23 +12,21 @@ function PhotoList({ images }) {
 			<ul>
 				{images.map(image => (
 					<li key={image.id}>
-						<img src={image.download_url} />
-						<p>Author: {image.author}</p>
+						<Button onClick={handleShow}>
+							<img src={image.download_url} />
+							<p>Author: {image.author}</p>
+						</Button>
 					</li>
 				))}
 			</ul>
 
-			<hr />
-
-			<Button variant="primary" onClick={handleShow}>
-				Launch demo modal
-			</Button>
-
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
-					<Modal.Title>Modal heading</Modal.Title>
+					<Modal.Title>author goes here</Modal.Title>
 				</Modal.Header>
-				<Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+				<Modal.Body>
+					image goes here
+				</Modal.Body>
 			</Modal>
 		</div>
 	);
