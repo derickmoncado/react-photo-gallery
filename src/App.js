@@ -6,7 +6,7 @@ function App() {
 	const [images, setImages] = useState([]);
 
 	useEffect(() => {
-			fetch('https://picsum.photos/v2/list')
+			fetch('https://picsum.photos/v2/list?page=2&limit=16')
 			.then(res => res.json())
 			.then(data => {
 				console.log(data)
@@ -16,7 +16,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<h1>Random Photo Gallery</h1>
+			<h1>Random Photo Gallery App</h1>
 			<PhotoList images={images} />
 		</div>
 	);
