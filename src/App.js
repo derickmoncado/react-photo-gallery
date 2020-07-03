@@ -6,12 +6,12 @@ function App() {
 	const [images, setImages] = useState([]);
 
 	useEffect(() => {
-			fetch('https://picsum.photos/v2/list?page=2&limit=16')
-			.then(res => res.json())
-			.then(data => {
-				console.log(data)
-				setImages(data)
-			})
+		fetch('https://picsum.photos/v2/list?page=2&limit=16')
+		.then(res => res.json())
+		.then(data => {
+			console.log(data)
+			setImages(data)
+		})
 	}, [])
 
 	return (

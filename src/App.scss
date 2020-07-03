@@ -37,7 +37,7 @@
 					img {
 						max-width: 175px;
 						height: auto;
-						padding-bottom: 5px;
+						padding-bottom: 10px;
 					}
 
 					p {
@@ -64,4 +64,8 @@
 			}
 		}
 	}
+}
+
+.modal-body {
+	text-align: center;
 }

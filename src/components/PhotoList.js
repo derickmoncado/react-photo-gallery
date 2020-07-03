@@ -6,6 +6,7 @@ function PhotoList({ images }) {
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
+	//const thisImageID = images.filter();
 
 	return (
 		<div className="photo-container">
@@ -13,19 +14,19 @@ function PhotoList({ images }) {
 				{images.map(image => (
 					<li key={image.id}>
 						<Button onClick={handleShow}>
-							<img src={image.download_url} />
+							<img src={image.download_url} alt="Random pic" />
 							<p>Author: {image.author}</p>
 						</Button>
 					</li>
 				))}
 			</ul>
 
-			<Modal show={show} onHide={handleClose}>
+			<Modal show={show} onHide={handleClose} centered>
 				<Modal.Header closeButton>
-					<Modal.Title>author goes here</Modal.Title>
+					<Modal.Title>Photo By: [author]</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
-					image goes here
+					[photo]
 				</Modal.Body>
 			</Modal>
 		</div>
