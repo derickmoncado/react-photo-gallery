@@ -1,71 +1,70 @@
 .App {
-	text-align: center;
-	padding: 22px;
-	margin: 22px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
+  text-align: center;
+  padding: 22px;
+  margin: 22px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 
-	h1 {
-		font-size: 24px;
-		padding-bottom: 10px;
-	}
+  h1 {
+    font-size: 24px;
+    padding-bottom: 10px;
+  }
 
-	.photo-container {
+  .photo-container {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      text-align: left;
+      display: flex;
+      flex-wrap: wrap;
 
-		ul {
-			margin: 0;
-			padding: 0;
-			list-style-type: none;
-			text-align: left;
-			display: flex;
-			flex-wrap: wrap;
+      li {
+        padding: 10px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
 
-			li {
-				padding: 10px;
-				width: 50%;
-				display: flex;
-				align-items: center;
-				flex-direction: column;
+        button {
+          background: none;
+          border: none;
+          border-radius: 0;
+          outline: none;
+          color: #404041;
 
-				button {
-					background: none;
-					border: none;
-					border-radius: 0;
-					outline: none;
-					color: #404041;
+          img {
+            max-width: 175px;
+            height: auto;
+            padding-bottom: 10px;
+          }
 
-					img {
-						max-width: 175px;
-						height: auto;
-						padding-bottom: 10px;
-					}
+          p {
+            font-size: 12px;
+            margin-bottom: 0;
+          }
 
-					p {
-						font-size: 12px;
-						margin-bottom: 0;
-					}
+          &:focus,
+          &.active {
+            background: none !important;
+            color: inherit !important;
+          }
+        }
 
-					&:focus,
-					&.active {
-						background: none !important;
-						color: inherit !important;
-					}
-				}
+        &:hover {
+          cursor: pointer;
+          background: #f2f2f2;
+        }
 
-				&:hover {
-					cursor: pointer;
-					background: #f2f2f2;
-				}
-
-				&:last-child {
-					border: none;
-					padding-bottom: 0;
-				}
-			}
-		}
-	}
+        &:last-child {
+          border: none;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
 }
 
 .modal-body {
-	text-align: center;
+  text-align: center;
 }
