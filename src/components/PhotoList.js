@@ -14,7 +14,7 @@ function PhotoList({ images }) {
       <ul>
         {images.map(image => (
           <li key={image.id}>
-            <Button onClick={handleShow}>
+            <Button onClick={() => {handleShow(image.id)}}>
               <img src={image.download_url} alt="Random pic" />
               <p>Author: {image.author}</p>
             </Button>
