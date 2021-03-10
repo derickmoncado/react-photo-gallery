@@ -1,16 +1,17 @@
-import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-import Spinner from "./Spinner";
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
-function PhotoList({ images }) {
+const PhotoList = ({ images }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = (imageID) => {
+    setShow(true);
+    console.log(imageID);
+  };
 
   return (
     <div className="photo-container">
-      <Spinner />
       <ul>
         {images.map(image => (
           <li key={image.id}>
@@ -24,9 +25,9 @@ function PhotoList({ images }) {
 
       <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton>
-          <Modal.Title>Photo By: [author]</Modal.Title>
+          <Modal.Title>Photo By: author name here</Modal.Title>
         </Modal.Header>
-        <Modal.Body>[photo]</Modal.Body>
+        <Modal.Body>photo goes here</Modal.Body>
       </Modal>
     </div>
   );

@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import "./App.scss";
-import PhotoList from "./components/PhotoList";
+import React, { useState, useEffect } from 'react';
+import './App.scss';
+import PhotoList from './components/PhotoList';
 
 function App() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch("https://picsum.photos/v2/list?page=2&limit=16")
+    fetch('https://picsum.photos/v2/list?page=2&limit=16')
       .then(res => res.json())
       .then(data => {
         setImages(data);
