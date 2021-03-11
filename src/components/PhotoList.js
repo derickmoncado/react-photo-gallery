@@ -3,11 +3,12 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 const PhotoList = ({ images }) => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
+  const [show, setShow] = useState(null);
+  const handleClose = () => setShow(null);
   const handleShow = (imageID) => {
     setShow(imageID);
-  };
+  }
+  const imageToShow = images.find((img) => (img.id === show));
 
   return (
     <div className="photo-container">
@@ -22,11 +23,13 @@ const PhotoList = ({ images }) => {
         ))}
       </ul>
 
-      <Modal show={show} onHide={handleClose} centered>
+      <Modal show={!!imageToShow} onHide={handleClose} centered>
         <Modal.Header closeButton>
-          <Modal.Title>Photo By: author name</Modal.Title>
+          <Modal.Title>Photo By: {imageToShow?.author}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>photo goes here</Modal.Body>
+        <Modal.Body>
+          <img src={imageToShow?.download_url} />
+        </Modal.Body>
       </Modal>
     </div>
   );
