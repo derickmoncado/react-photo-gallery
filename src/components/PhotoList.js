@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
@@ -8,7 +8,7 @@ const PhotoList = ({ images }) => {
   const handleShow = (imageID) => {
     setShow(imageID);
   }
-  const imageToShow = images.find((img) => (img.id === show));
+  const imageToShow = useMemo(() => images.find((img) => (img.id === show)), [images, show]);
 
   return (
     <div className="photo-container">
@@ -16,7 +16,7 @@ const PhotoList = ({ images }) => {
         {images.map(image => (
           <li key={image.id}>
             <Button onClick={() => handleShow(image.id)}>
-              <img src={image.download_url} alt="Random pic" />
+              <img src={image.download_url} alt={`Shot By: ${image.author}`} />
               <p>Author: {image.author}</p>
             </Button>
           </li>
@@ -28,7 +28,7 @@ const PhotoList = ({ images }) => {
           <Modal.Title>Photo By: {imageToShow?.author}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img src={imageToShow?.download_url} />
+          <img src={imageToShow?.download_url} alt={`Shot By: ${imageToShow?.author}`} width='460' />
         </Modal.Body>
       </Modal>
     </div>
