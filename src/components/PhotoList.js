@@ -23,12 +23,12 @@ const PhotoList = ({ images }) => {
         ))}
       </ul>
 
-      <Modal show={!!imageToShow} onHide={handleClose} centered>
+      <Modal size="lg" show={!!imageToShow} onHide={handleClose} centered>
         <Modal.Header closeButton>
           <Modal.Title>Photo By: {imageToShow?.author}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img src={imageToShow?.download_url} alt={`Shot By: ${imageToShow?.author}`} width='460' />
+          <img src={imageToShow?.download_url} alt={`Shot By: ${imageToShow?.author}`} width="100%" />
         </Modal.Body>
       </Modal>
     </div>
